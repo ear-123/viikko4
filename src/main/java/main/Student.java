@@ -1,11 +1,12 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Student {
     private String name;
     private String studentNumber;
-    private HashMap<String, Integer> courses = new HashMap<>();
+    private ArrayList<Grade> courses = new ArrayList<>();
 
     public void newStudent(String newName, String newStudentNumber){
         this.name = newName;
@@ -21,6 +22,20 @@ public class Student {
     }
 
     public void addGrade(String course, int grade){
-        courses.put(course, grade);
+        courses.add(new Grade(course, grade));
+    }
+
+    public void printCourses(){
+        int i = 0;
+        while (true) {
+            if (i>= courses.size()) {
+                break;
+            }
+            System.out.println(courses.get(i).getCourse()+ ": "+ courses.get(i).getGrade());
+            
+            i++;
+        } 
+
+        
     }
 }
