@@ -46,7 +46,21 @@ public class App {
                 continue;
             }
             if (option == 3) {
-                System.out.println("");
+                int i = 0;
+                for(Student student : students){
+                    System.out.println(i + ": "+ student.getName());
+                    i++;
+                }
+
+                System.out.println("Mille opiskelijalle suorite lisätään?");
+                int studentIndex = Integer.parseInt(scan.nextLine());
+                System.out.println("Mille kurssille suorite lisätään?");
+                String course = scan.nextLine();
+                System.out.println("Mikä arvosana kurssille lisätään?");
+                int grade = Integer.parseInt(scan.nextLine());
+
+                students.get(studentIndex).addGrade(course, grade);
+
                 continue;
             }
             else {
