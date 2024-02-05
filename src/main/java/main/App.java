@@ -63,6 +63,16 @@ public class App {
 
                 continue;
             }
+            if (option == 4) {
+                int i = 0;
+                for(Student student : students){
+                    System.out.println(i + ": "+ student.getName());
+                    i++;
+                }
+                System.out.println("Minkä opiskelijan suoritteet listataan?");
+                int studentIndex = Integer.parseInt(scan.nextLine());
+                students.get(studentIndex).printCourses();
+            }
             else {
                 System.out.println("Syöte oli väärä");
                 continue;
